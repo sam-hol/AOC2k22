@@ -23,17 +23,7 @@ public class Day_3 {
 
     public void sumPrioritPart2() {
         int sum = 0;
-/*
-        for(int i = 0; i < first.size(); i =+ 3) {
-            for (char c : first.get(i)) {
-                if (second.get(i).contains(c)) {
-                    sum += getPriority(c);
-                    break;
-                }
-            }
-        }
 
- */
         for (int i = 0; i < rucksack.size(); i += 3) {
             for (char c : rucksack.get(i)) {
                 if (rucksack.get(i + 1).contains(c)) {
