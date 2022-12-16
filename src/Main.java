@@ -25,6 +25,11 @@ public class Main {
 			d2.topSecretPlan();
 			break;
 
+		case 3:
+			Day_3 d3 = new Day_3();
+			d3.load();
+			d3.sumPriority();
+
 	}
 
     }
