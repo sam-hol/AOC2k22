@@ -1,19 +1,30 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 	// TODO Auto-generated method stub
 	int day = 0;
 	day = choose_Day();
 
 	switch (day) {
-	case 1:
-	    Day_1 today = new Day_1();
-	    today.load();
-	    // today.test();
-	    System.out.println(today.greatest());
-	    System.out.println(today.topThree());
+		case 1:
+	    	Day_1 today = new Day_1();
+	    	today.load();
+	    	// today.test();
+	    	System.out.println(today.greatest());
+	    	System.out.println(today.topThree());
+			break;
+
+		case 2:
+			Day_2 d2 = new Day_2();
+			d2.load();
+			//d2.test();
+			d2.gameSolution();
+			d2.topSecretPlan();
+			break;
+
 	}
 
     }

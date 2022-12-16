@@ -7,23 +7,23 @@ import java.util.Scanner;
 public class Day_1 {
     static ArrayList<Integer> calData = new ArrayList<Integer>();
 
-    public static void test() {
+    public void test() {
 	for (int i : calData) {
 	    System.out.println(i);
 	}
     }
 
-    public static int greatest() {
+    public int greatest() {
 	return Collections.max(calData);
     }
 
-    public static int topThree() {
+    public int topThree() {
 	int size = calData.size() - 1;
 	int tt = calData.get(size) + calData.get(size - 1) + calData.get(size - 2);
 	return tt;
     }
 
-    public static void load() {
+    public void load() {
 	String nextLine;
 	int calories = 0;
 
