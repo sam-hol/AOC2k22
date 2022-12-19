@@ -35,7 +35,6 @@ public class Main {
 			case 4:
 				Day_4 d4 = new Day_4();
 				d4.load();
-				//d4.test();
 				d4.splitList();
 				d4.part1();
 				d4.part2();
