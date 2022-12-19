@@ -28,7 +28,7 @@ public class Day_1 {
 		int calories = 0;
 
 		try {
-			Scanner scanner = new Scanner(new File("input"));
+			Scanner scanner = new Scanner(new File("input1B"));
 			while (scanner.hasNextLine()) {
 				nextLine = scanner.nextLine();
 				// System.out.println(nextLine);

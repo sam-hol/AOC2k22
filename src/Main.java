@@ -30,6 +30,13 @@ public class Main {
 				d3.load();
 				d3.sumPriority();
 				d3.sumPrioritPart2();
+				break;
+
+			case 4:
+				Day_4 d4 = new Day_4();
+				d4.load();
+				//d4.test();
+				d4.splitList();
 
 		}
 
