@@ -61,8 +61,7 @@ public class Day_3 {
             second.add(charSecond);
             rucksack.add(sack);
         }
-
-        System.out.println("THERE ARE " + first.size() + " PACKS");
+        //System.out.println("THERE ARE " + first.size() + " PACKS");
     }
 
     public int getPriority(char value) {

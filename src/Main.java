@@ -37,6 +37,7 @@ public class Main {
 				d4.load();
 				//d4.test();
 				d4.splitList();
+				d4.part1();
 
 		}
 

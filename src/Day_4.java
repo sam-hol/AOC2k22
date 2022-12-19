@@ -1,45 +1,62 @@
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class Day_4 {
     static ArrayList<String> initList = new ArrayList<String>();
-    static ArrayList<ArrayList<Integer>> rangeList = new ArrayList<ArrayList<Integer>>();
+    static ArrayList<ArrayList<Range>> rList = new ArrayList<ArrayList<Range>>();
 
     public void part1() {
+        //First attempt: answer = 162, too low
+        //Second attempt: answer = 493, too high
+
         int overlap = 0;
-        ArrayList<Integer> temp1, temp2;
+        int p11, p12, p21, p22;
 
-        for (ArrayList<Integer> l : rangeList) {
-            for(int i : l){
+        for (ArrayList<Range> r : rList) {
+            System.out.println(r.get(0).getLow() + "-" + r.get(0).getHigh() + "," + r.get(1).getLow() + "-" + r.get(1).getHigh());
 
-            }
+            if(r.get(0).containsRange(r.get(1))) overlap++;
+            if(r.get(1).containsRange(r.get(0))) overlap++;
+
         }
+
+        System.out.println("There are " + overlap + " total overlaps.");
     }
 
+    /*
+    splitList takes the initial ArrayList<String> loaded from file and processes it
+    into an ArrayList of ArrayList<Range>
+     */
     public void splitList() {
-        ArrayList<Integer> tempRange;
         String[] tempList;
         String[] tempList2;
-        String temp;
+        ArrayList<Range> tempRList;
+        Range tempR;
 
         for(String s : initList) {
-            tempRange = new ArrayList<Integer>();
+            tempR = new Range();
+            tempRList = new ArrayList<Range>();
 
+            //Splits the list into two ranges
             tempList = s.split(",");
-
+            //Splits the first range into two halves
             tempList2 = tempList[0].split("-");
-            tempRange.add(Integer.parseInt(tempList2[0]));
-            tempRange.add(Integer.parseInt(tempList2[1]));
 
+            //populates the first Range var and adds it to the temp list of Ranges
+            tempR.range(Integer.parseInt(tempList2[0]), Integer.parseInt(tempList2[1]));
+            tempRList.add(tempR);
+            tempR = new Range();
+
+            //splits the second range into two halves
             tempList2 = tempList[1].split("-");
-            tempRange.add(Integer.parseInt(tempList2[0]));
-            tempRange.add(Integer.parseInt(tempList2[1]));
 
-            rangeList.add(tempRange);
+            //populates the second Range var and adds it to the temp list of Ranges
+            tempR.range(Integer.parseInt(tempList2[0]), Integer.parseInt(tempList2[1]));
+            tempRList.add(tempR);
+            rList.add(tempRList);
+
         }
+        System.out.println("rList SIZE = " + rList.size());
     }
 
     public void load() throws FileNotFoundException {
@@ -48,14 +65,4 @@ public class Day_4 {
 
         initList.addAll(loader.load(fname));
     }
-
-    public void test() {
-        for (String s : initList) {
-            System.out.println(s);
-        }
-        System.out.println("THERE ARE: " + initList.size() + " ITEMS.");
-    }
-
-
-
 }
