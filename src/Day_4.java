@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Day_4 {
     static ArrayList<String> initList = new ArrayList<String>();
     static ArrayList<ArrayList<Range>> rList = new ArrayList<ArrayList<Range>>();
-    String fname = "input4.txt";
+    String fname = "input4";
 
     public void part1() {
         //First attempt: answer = 162, too low

@@ -39,7 +39,7 @@ public class Day_3 {
 
     public void load() throws FileNotFoundException {
         String line;
-        Scanner input = new Scanner(new File("inputDay3"));
+        Scanner input = new Scanner(new File("input3"));
         ArrayList<Character> charFirst, charSecond, sack;
 
         while (input.hasNextLine()) {
